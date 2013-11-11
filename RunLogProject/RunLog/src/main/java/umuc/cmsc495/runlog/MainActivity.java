@@ -1,23 +1,16 @@
 package umuc.cmsc495.runlog;
 
-import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.NumberPicker;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
@@ -46,38 +39,43 @@ public class MainActivity extends ActionBarActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-
-        // Configure Number Picker
-        //NumberPicker numberPicker = (NumberPicker) findViewById(R.id.numberPicker);
-
-
-
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
-    }
 
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
+        switch(position)
+        {
+            case 0:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FragmentOverview())
+                        .commit();
                 mTitle = getString(R.string.title_section1);
                 break;
-            case 2:
+            case 1:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FragmentGoals())
+                        .commit();
                 mTitle = getString(R.string.title_section2);
                 break;
-            case 3:
+            case 2:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FragmentRecords())
+                        .commit();
                 mTitle = getString(R.string.title_section3);
                 break;
-            case 4:
+            case 3:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FragmentHistory())
+                        .commit();
                 mTitle = getString(R.string.title_section4);
                 break;
-            case 5:
+            case 4:
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, new FragmentEquipment())
+                        .commit();
                 mTitle = getString(R.string.title_section5);
                 break;
         }
@@ -148,13 +146,5 @@ public class MainActivity extends ActionBarActivity
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             return rootView;
         }
-
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
     }
-
 }

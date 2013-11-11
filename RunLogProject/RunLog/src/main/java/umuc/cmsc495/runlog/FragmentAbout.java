@@ -7,17 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentFive extends Fragment {
+public class FragmentAbout extends Fragment {
  
     public static Fragment newInstance(Context context) {
-        FragmentFive f = new FragmentFive();
+        FragmentAbout f = new FragmentAbout();
  
         return f;
     }
  
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_five, null);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_about, null);
         return root;
     }
  

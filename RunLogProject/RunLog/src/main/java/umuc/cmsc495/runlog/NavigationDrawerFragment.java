@@ -1,19 +1,18 @@
 package umuc.cmsc495.runlog;
 
-//import android.app.FragmentManager;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBarActivity;;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-//import android.app.Fragment
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +22,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -60,8 +60,7 @@ public class NavigationDrawerFragment extends Fragment {
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
-
-
+    private CharSequence mTitle;
 
     public NavigationDrawerFragment() {
     }
@@ -192,9 +191,7 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     private void selectItem(int position) {
-        int mCurrentSelectedPosition = position;
-        FragmentManager fragmentManager = getFragmentManager();
-
+        mCurrentSelectedPosition = position;
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }
@@ -203,14 +200,6 @@ public class NavigationDrawerFragment extends Fragment {
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
-        }
-
-        switch (position) {
-            case 0:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, new OverviewFragment())
-                        .commit();
-                break;
         }
     }
 
@@ -260,20 +249,33 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
+        FragmentManager fm = getFragmentManager();
+
         switch (item.getItemId())
         {
             case R.id.action_enterRun:
-                Toast.makeText(getActivity(), "Open Run Recording window now.", Toast.LENGTH_SHORT).show();
-                return true;
+                fm.beginTransaction()
+                        .replace(R.id.container, new FragmentEnterRun())
+                        .commit();
+                mTitle = "Enter Run";
+                break;
             case R.id.action_settings:
-                Toast.makeText(getActivity(), "Open Options menu now.", Toast.LENGTH_SHORT).show();
-                return true;
+                fm.beginTransaction()
+                        .replace(R.id.container, new FragmentSettings())
+                        .commit();
+                mTitle = "Settings";
+                break;
             case R.id.action_about:
-                Toast.makeText(getActivity(), "Open About menu now.", Toast.LENGTH_SHORT).show();
-                return true;
+                fm.beginTransaction()
+                        .replace(R.id.container, new FragmentAbout())
+                        .commit();
+                mTitle = "About";
+                break;
             case R.id.action_exit:
-                Toast.makeText(getActivity(), "Exit program now.", Toast.LENGTH_SHORT).show();
-                return true;
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
