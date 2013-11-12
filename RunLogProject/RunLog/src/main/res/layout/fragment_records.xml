@@ -2,14 +2,115 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
- 
+    android:orientation="vertical">
+
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="records" />
- 
+        android:text="Records"
+        android:id="@+id/records_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Mileage in a Run"
+        android:id="@+id/records_run"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginBottom="189dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/records_day" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Mileage in a Day"
+        android:id="@+id/records_day"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/records_run"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Mileage in a Week"
+        android:id="@+id/records_week"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/records_day"
+        android:layout_alignRight="@+id/records_day" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Mileage in a Month"
+        android:id="@+id/records_month"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_alignTop="@+id/records_month_val"
+        android:layout_alignRight="@+id/records_run" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Most Mileage in a Year"
+        android:id="@+id/records_year"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_above="@+id/records_month"
+        android:layout_alignRight="@+id/records_run" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value here"
+        android:id="@+id/records_year_val"
+        android:textSize="18dp"
+        android:layout_marginRight="33dp"
+        android:layout_above="@+id/records_month_val"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value here"
+        android:id="@+id/records_day_val"
+        android:textSize="18dp"
+        android:layout_alignBottom="@+id/records_day"
+        android:layout_alignLeft="@+id/records_year_val" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value here"
+        android:id="@+id/records_week_val"
+        android:textSize="18dp"
+        android:layout_alignBottom="@+id/records_week"
+        android:layout_alignLeft="@+id/records_day_val" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value here"
+        android:id="@+id/records_month_val"
+        android:textSize="18dp"
+        android:layout_above="@+id/records_week"
+        android:layout_alignLeft="@+id/records_week_val" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="value here"
+        android:id="@+id/records_run_val"
+        android:textSize="18dp"
+        android:layout_alignBottom="@+id/records_run"
+        android:layout_alignLeft="@+id/records_day_val" />
+
 </RelativeLayout>

@@ -3,13 +3,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
- 
+
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="about" />
- 
+        android:text="About"
+        android:id="@+id/about_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RunLog \nVersion: 1.0"
+        android:id="@+id/about_version"
+        android:layout_marginTop="48dp"
+        android:autoText="false"
+        android:gravity="center_horizontal"
+        android:textSize="20dp"
+        android:layout_below="@+id/about_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed By:\nJD Baudean\nRyan Beck\nJosh Ronk\nTim Roudebush\nTaylor Thomas\nKatie Wolfe"
+        android:id="@+id/about_developed_by"
+        android:gravity="center_horizontal"
+        android:textSize="16dp"
+        android:layout_marginBottom="36dp"
+        android:layout_above="@+id/about_developed_for"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed For:\nProfessor Duane Jarc\nCMSC495\nFall 2013 "
+        android:id="@+id/about_developed_for"
+        android:gravity="center_horizontal"
+        android:textSize="16dp"
+        android:layout_marginBottom="54dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

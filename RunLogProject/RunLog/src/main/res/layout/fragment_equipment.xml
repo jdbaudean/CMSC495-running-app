@@ -2,14 +2,381 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
- 
+    android:orientation="vertical"
+    android:minWidth="20dp">
+
     <TextView
-        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:text="Equipment"
+        android:id="@+id/equipment_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brand"
+        android:id="@+id/equipment_brand"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/equipment_active_val1"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Model"
+        android:id="@+id/equipment_model"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/equipment_brand"
+        android:layout_toLeftOf="@+id/equipment_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cost"
+        android:id="@+id/equipment_cost"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/equipment_model"
+        android:layout_toRightOf="@+id/equipment_model"
+        android:layout_marginLeft="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Miles"
+        android:id="@+id/equipment_miles"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/equipment_cost"
+        android:layout_toRightOf="@+id/equipment_cost"
+        android:layout_marginLeft="27dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$/Mile"
+        android:id="@+id/equipment_costpermile"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/equipment_miles"
+        android:layout_toRightOf="@+id/equipment_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_brand_val1"
+        android:background="#cfcfcf"
+        android:width="55dp"
+        android:minWidth="20dp"
+        android:layout_above="@+id/equipment_brand_val2"
+        android:layout_alignRight="@+id/equipment_brand"
+        android:layout_marginBottom="44dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_start_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:width="55dp"
+        android:layout_alignTop="@+id/equipment_brand_val1"
+        android:layout_alignRight="@+id/equipment_model" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_end_val1"
+        android:layout_alignTop="@+id/equipment_start_val1"
+        android:layout_alignRight="@+id/equipment_cost"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dur_val1"
+        android:layout_alignTop="@+id/equipment_end_val1"
+        android:layout_alignRight="@+id/equipment_miles"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dist_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:layout_alignTop="@+id/equipment_dur_val1"
+        android:layout_alignRight="@+id/equipment_costpermile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_brand_val2"
         android:layout_centerVertical="true"
-        android:text="equipment" />
- 
+        android:layout_alignLeft="@+id/equipment_brand_val1"
+        android:background="#cfcfcf"
+        android:width="55dp"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_start_val2"
+        android:layout_alignTop="@+id/equipment_brand_val2"
+        android:layout_alignLeft="@+id/equipment_start_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:width="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dist_val2"
+        android:layout_alignTop="@+id/equipment_end_val2"
+        android:layout_alignLeft="@+id/equipment_dist_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dur_val2"
+        android:layout_alignTop="@+id/equipment_dist_val2"
+        android:layout_alignLeft="@+id/equipment_dur_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_end_val2"
+        android:layout_alignTop="@+id/equipment_start_val2"
+        android:layout_alignLeft="@+id/equipment_end_val1"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_brand_val3"
+        android:layout_marginTop="43dp"
+        android:background="#cfcfcf"
+        android:width="55dp"
+        android:minWidth="20dp"
+        android:layout_below="@+id/equipment_brand_val2"
+        android:layout_alignLeft="@+id/equipment_brand_val2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_start_val3"
+        android:layout_alignTop="@+id/equipment_brand_val3"
+        android:layout_alignLeft="@+id/equipment_start_val2"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:width="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dur_val3"
+        android:layout_alignTop="@+id/equipment_end_val3"
+        android:layout_alignLeft="@+id/equipment_dur_val2"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dist_val3"
+        android:layout_alignTop="@+id/equipment_dur_val3"
+        android:layout_alignLeft="@+id/equipment_dist_val2"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_end_val3"
+        android:layout_alignTop="@+id/equipment_start_val3"
+        android:layout_alignLeft="@+id/equipment_end_val2"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_brand_val4"
+        android:layout_marginTop="40dp"
+        android:background="#cfcfcf"
+        android:width="55dp"
+        android:minWidth="20dp"
+        android:layout_below="@+id/equipment_brand_val3"
+        android:layout_alignLeft="@+id/equipment_brand_val3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_start_val4"
+        android:layout_alignTop="@+id/equipment_brand_val4"
+        android:layout_alignLeft="@+id/equipment_start_val3"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:width="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dur_val4"
+        android:layout_alignTop="@+id/equipment_dist_val4"
+        android:layout_alignLeft="@+id/equipment_dur_val3"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dist_val4"
+        android:layout_alignLeft="@+id/equipment_dist_val3"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:layout_alignTop="@+id/equipment_end_val4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_end_val4"
+        android:layout_alignTop="@+id/equipment_start_val4"
+        android:layout_alignLeft="@+id/equipment_end_val3"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_brand_val5"
+        android:layout_alignTop="@+id/equipment_start_val5"
+        android:layout_alignLeft="@+id/equipment_brand_val4"
+        android:width="55dp"
+        android:background="#cfcfcf"
+        android:layout_alignParentEnd="false"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_start_val5"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/equipment_start_val4"
+        android:layout_alignLeft="@+id/equipment_start_val4"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:width="55dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dist_val5"
+        android:layout_alignLeft="@+id/equipment_dist_val4"
+        android:background="#cfcfcf"
+        android:minWidth="20dp"
+        android:layout_alignTop="@+id/equipment_dur_val5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_dur_val5"
+        android:layout_alignTop="@+id/equipment_end_val5"
+        android:layout_alignLeft="@+id/equipment_dur_val4"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_end_val5"
+        android:layout_alignTop="@+id/equipment_start_val5"
+        android:layout_alignLeft="@+id/equipment_end_val4"
+        android:background="#cfcfcf"
+        android:minWidth="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Active"
+        android:id="@+id/equipment_active"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_alignTop="@+id/equipment_costpermile"
+        android:layout_toLeftOf="@+id/ignore_dont_delete" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_active_val2"
+        android:checked="false"
+        android:layout_alignBottom="@+id/equipment_dist_val2"
+        android:layout_alignLeft="@+id/equipment_active"
+        android:layout_marginBottom="-8dp"
+        android:clickable="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_active_val3"
+        android:checked="false"
+        android:layout_above="@+id/equipment_brand_val4"
+        android:layout_alignRight="@+id/equipment_active"
+        android:layout_marginBottom="-8dp"
+        android:clickable="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_active_val1"
+        android:checked="false"
+        android:layout_alignBottom="@+id/equipment_dist_val1"
+        android:layout_alignLeft="@+id/equipment_active_val2"
+        android:layout_marginBottom="-8dp"
+        android:clickable="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ignore_dont_delete"
+        android:checked="false"
+        android:layout_alignBottom="@+id/equipment_dist_val4"
+        android:layout_alignParentRight="true"
+        android:visibility="invisible" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_active_val5"
+        android:checked="false"
+        android:layout_alignBottom="@+id/equipment_dist_val5"
+        android:layout_toLeftOf="@+id/ignore_dont_delete"
+        android:layout_marginBottom="-8dp"
+        android:clickable="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equipment_active_val4"
+        android:checked="false"
+        android:layout_above="@+id/equipment_start_val5"
+        android:layout_alignLeft="@+id/equipment_active_val2"
+        android:layout_marginBottom="-8dp"
+        android:clickable="true" />
+
 </RelativeLayout>

@@ -257,19 +257,16 @@ public class NavigationDrawerFragment extends Fragment {
                 fm.beginTransaction()
                         .replace(R.id.container, new FragmentEnterRun())
                         .commit();
-                mTitle = "Enter Run";
                 break;
             case R.id.action_settings:
                 fm.beginTransaction()
                         .replace(R.id.container, new FragmentSettings())
                         .commit();
-                mTitle = "Settings";
                 break;
             case R.id.action_about:
                 fm.beginTransaction()
                         .replace(R.id.container, new FragmentAbout())
                         .commit();
-                mTitle = "About";
                 break;
             case R.id.action_exit:
                 Intent intent = new Intent(Intent.ACTION_MAIN);

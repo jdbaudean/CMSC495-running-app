@@ -3,13 +3,108 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
- 
+
     <TextView
-        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Goals"
+        android:id="@+id/goals_title"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_yearly_val"
+        android:textSize="12dp"
+        android:layout_below="@+id/goals_title"
+        android:layout_toRightOf="@+id/goals_title"
+        android:layout_marginTop="137dp"
+        android:minWidth="130dp"
+        android:hint="Enter mileage goal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_monthly_val"
+        android:layout_marginTop="39dp"
+        android:textSize="12dp"
+        android:layout_below="@+id/goals_yearly_val"
+        android:layout_alignLeft="@+id/goals_yearly_val"
+        android:minWidth="130dp"
+        android:hint="Enter mileage goal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_weekly_val"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/goals_monthly_val"
+        android:layout_alignLeft="@+id/goals_monthly_val"
+        android:textSize="12dp"
+        android:minWidth="130dp"
+        android:hint="Enter mileage goal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goals_daily_val"
+        android:layout_marginTop="41dp"
+        android:textSize="12dp"
+        android:layout_below="@+id/goals_weekly_val"
+        android:layout_alignLeft="@+id/goals_weekly_val"
+        android:minWidth="130dp"
+        android:hint="Enter mileage goal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yearly Goal"
+        android:id="@+id/goals_yearly"
+        android:layout_alignBottom="@+id/goals_yearly_val"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="36dp"
+        android:textSize="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monthly Goal"
+        android:id="@+id/goals_monthly"
+        android:textSize="24dp"
+        android:layout_above="@+id/goals_weekly_val"
+        android:layout_alignRight="@+id/goals_yearly" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weekly Goal"
+        android:id="@+id/goals_weekly"
+        android:textSize="24dp"
+        android:layout_above="@+id/goals_daily_val"
+        android:layout_alignRight="@+id/goals_monthly" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Goal"
+        android:id="@+id/goals_daily"
+        android:textSize="24dp"
+        android:layout_alignBottom="@+id/goals_daily_val"
+        android:layout_alignRight="@+id/goals_weekly" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto-Generate Goals"
+        android:id="@+id/goals_generate_button"
+        android:layout_below="@+id/goals_title"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="goals" />
- 
+        android:layout_marginTop="46dp"
+        android:clickable="true" />
+
 </RelativeLayout>

@@ -52,31 +52,26 @@ public class MainActivity extends ActionBarActivity
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentOverview())
                         .commit();
-                mTitle = getString(R.string.title_section1);
                 break;
             case 1:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentGoals())
                         .commit();
-                mTitle = getString(R.string.title_section2);
                 break;
             case 2:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentRecords())
                         .commit();
-                mTitle = getString(R.string.title_section3);
                 break;
             case 3:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentHistory())
                         .commit();
-                mTitle = getString(R.string.title_section4);
                 break;
             case 4:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentEquipment())
                         .commit();
-                mTitle = getString(R.string.title_section5);
                 break;
         }
     }
