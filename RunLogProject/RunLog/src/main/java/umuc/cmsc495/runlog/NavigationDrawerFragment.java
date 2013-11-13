@@ -258,11 +258,6 @@ public class NavigationDrawerFragment extends Fragment {
                         .replace(R.id.container, new FragmentEnterRun())
                         .commit();
                 break;
-            case R.id.action_settings:
-                fm.beginTransaction()
-                        .replace(R.id.container, new FragmentSettings())
-                        .commit();
-                break;
             case R.id.action_about:
                 fm.beginTransaction()
                         .replace(R.id.container, new FragmentAbout())
