@@ -18,14 +18,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RunLog \nVersion: 1.0"
+        android:text="RunLog\nVersion 1.0"
         android:id="@+id/about_version"
         android:layout_marginTop="48dp"
         android:autoText="false"
         android:gravity="center_horizontal"
         android:textSize="20dp"
         android:layout_below="@+id/about_title"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textStyle="italic" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,5 +48,14 @@
         android:textSize="16dp"
         android:layout_marginBottom="54dp"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#7d7d7d"
+        android:layout_below="@+id/about_title"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

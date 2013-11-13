@@ -24,7 +24,9 @@
         android:layout_toRightOf="@+id/goals_title"
         android:layout_marginTop="137dp"
         android:minWidth="130dp"
-        android:hint="Enter mileage goal" />
+        android:hint="Enter mileage goal"
+        android:inputType="numberDecimal"
+        android:gravity="center_horizontal" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -35,7 +37,9 @@
         android:layout_below="@+id/goals_yearly_val"
         android:layout_alignLeft="@+id/goals_yearly_val"
         android:minWidth="130dp"
-        android:hint="Enter mileage goal" />
+        android:hint="Enter mileage goal"
+        android:inputType="numberDecimal"
+        android:gravity="center_horizontal" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -46,7 +50,9 @@
         android:layout_alignLeft="@+id/goals_monthly_val"
         android:textSize="12dp"
         android:minWidth="130dp"
-        android:hint="Enter mileage goal" />
+        android:hint="Enter mileage goal"
+        android:inputType="numberDecimal"
+        android:gravity="center_horizontal" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -57,7 +63,9 @@
         android:layout_below="@+id/goals_weekly_val"
         android:layout_alignLeft="@+id/goals_weekly_val"
         android:minWidth="130dp"
-        android:hint="Enter mileage goal" />
+        android:hint="Enter mileage goal"
+        android:inputType="numberDecimal"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -106,5 +114,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
         android:clickable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#7d7d7d"
+        android:layout_below="@+id/goals_title"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

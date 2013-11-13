@@ -75,21 +75,21 @@
         android:layout_height="wrap_content"
         android:id="@+id/equipment_brand_val1"
         android:background="#cfcfcf"
-        android:width="55dp"
-        android:minWidth="20dp"
+        android:minWidth="35dp"
         android:layout_above="@+id/equipment_brand_val2"
         android:layout_alignRight="@+id/equipment_brand"
-        android:layout_marginBottom="44dp" />
+        android:layout_marginBottom="44dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/equipment_start_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:width="55dp"
+        android:minWidth="35dp"
         android:layout_alignTop="@+id/equipment_brand_val1"
-        android:layout_alignRight="@+id/equipment_model" />
+        android:layout_alignRight="@+id/equipment_model"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -98,7 +98,8 @@
         android:layout_alignTop="@+id/equipment_start_val1"
         android:layout_alignRight="@+id/equipment_cost"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -107,16 +108,18 @@
         android:layout_alignTop="@+id/equipment_end_val1"
         android:layout_alignRight="@+id/equipment_miles"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/equipment_dist_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
+        android:minWidth="30dp"
         android:layout_alignTop="@+id/equipment_dur_val1"
-        android:layout_alignRight="@+id/equipment_costpermile" />
+        android:layout_alignRight="@+id/equipment_costpermile"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -125,8 +128,8 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/equipment_brand_val1"
         android:background="#cfcfcf"
-        android:width="55dp"
-        android:minWidth="20dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -135,8 +138,8 @@
         android:layout_alignTop="@+id/equipment_brand_val2"
         android:layout_alignLeft="@+id/equipment_start_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:width="55dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -145,7 +148,8 @@
         android:layout_alignTop="@+id/equipment_end_val2"
         android:layout_alignLeft="@+id/equipment_dist_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -154,7 +158,8 @@
         android:layout_alignTop="@+id/equipment_dist_val2"
         android:layout_alignLeft="@+id/equipment_dur_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -163,7 +168,8 @@
         android:layout_alignTop="@+id/equipment_start_val2"
         android:layout_alignLeft="@+id/equipment_end_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -171,10 +177,10 @@
         android:id="@+id/equipment_brand_val3"
         android:layout_marginTop="43dp"
         android:background="#cfcfcf"
-        android:width="55dp"
-        android:minWidth="20dp"
+        android:minWidth="35dp"
         android:layout_below="@+id/equipment_brand_val2"
-        android:layout_alignLeft="@+id/equipment_brand_val2" />
+        android:layout_alignLeft="@+id/equipment_brand_val2"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -183,8 +189,8 @@
         android:layout_alignTop="@+id/equipment_brand_val3"
         android:layout_alignLeft="@+id/equipment_start_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:width="55dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -193,7 +199,8 @@
         android:layout_alignTop="@+id/equipment_end_val3"
         android:layout_alignLeft="@+id/equipment_dur_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -202,7 +209,8 @@
         android:layout_alignTop="@+id/equipment_dur_val3"
         android:layout_alignLeft="@+id/equipment_dist_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -211,7 +219,8 @@
         android:layout_alignTop="@+id/equipment_start_val3"
         android:layout_alignLeft="@+id/equipment_end_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -219,10 +228,10 @@
         android:id="@+id/equipment_brand_val4"
         android:layout_marginTop="40dp"
         android:background="#cfcfcf"
-        android:width="55dp"
-        android:minWidth="20dp"
+        android:minWidth="35dp"
         android:layout_below="@+id/equipment_brand_val3"
-        android:layout_alignLeft="@+id/equipment_brand_val3" />
+        android:layout_alignLeft="@+id/equipment_brand_val3"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -231,8 +240,8 @@
         android:layout_alignTop="@+id/equipment_brand_val4"
         android:layout_alignLeft="@+id/equipment_start_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:width="55dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -241,7 +250,8 @@
         android:layout_alignTop="@+id/equipment_dist_val4"
         android:layout_alignLeft="@+id/equipment_dur_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -249,8 +259,9 @@
         android:id="@+id/equipment_dist_val4"
         android:layout_alignLeft="@+id/equipment_dist_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:layout_alignTop="@+id/equipment_end_val4" />
+        android:minWidth="30dp"
+        android:layout_alignTop="@+id/equipment_end_val4"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -259,7 +270,8 @@
         android:layout_alignTop="@+id/equipment_start_val4"
         android:layout_alignLeft="@+id/equipment_end_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -267,10 +279,10 @@
         android:id="@+id/equipment_brand_val5"
         android:layout_alignTop="@+id/equipment_start_val5"
         android:layout_alignLeft="@+id/equipment_brand_val4"
-        android:width="55dp"
         android:background="#cfcfcf"
         android:layout_alignParentEnd="false"
-        android:minWidth="20dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -280,8 +292,8 @@
         android:layout_below="@+id/equipment_start_val4"
         android:layout_alignLeft="@+id/equipment_start_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:width="55dp" />
+        android:minWidth="35dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -289,8 +301,9 @@
         android:id="@+id/equipment_dist_val5"
         android:layout_alignLeft="@+id/equipment_dist_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:layout_alignTop="@+id/equipment_dur_val5" />
+        android:minWidth="30dp"
+        android:layout_alignTop="@+id/equipment_dur_val5"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -299,7 +312,8 @@
         android:layout_alignTop="@+id/equipment_end_val5"
         android:layout_alignLeft="@+id/equipment_dur_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -308,7 +322,8 @@
         android:layout_alignTop="@+id/equipment_start_val5"
         android:layout_alignLeft="@+id/equipment_end_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="30dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -378,5 +393,24 @@
         android:layout_alignLeft="@+id/equipment_active_val2"
         android:layout_marginBottom="-8dp"
         android:clickable="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Equipment"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#7d7d7d"
+        android:layout_below="@+id/equipment_title"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

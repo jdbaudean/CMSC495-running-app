@@ -66,7 +66,7 @@
         android:textSize="12dp"
         android:layout_alignTop="@+id/history_duration"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="23dp"
+        android:layout_marginRight="15dp"
         android:textStyle="bold" />
 
     <TextView
@@ -78,7 +78,8 @@
         android:layout_toLeftOf="@+id/history_starttime"
         android:background="#cfcfcf"
         android:width="65dp"
-        android:minWidth="20dp" />
+        android:minWidth="20dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,7 +88,8 @@
         android:layout_alignTop="@+id/history_date_val1"
         android:layout_alignRight="@+id/history_starttime"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -96,7 +98,8 @@
         android:layout_alignTop="@+id/history_start_val1"
         android:layout_alignRight="@+id/history_endtime"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,16 +108,18 @@
         android:layout_alignTop="@+id/history_end_val1"
         android:layout_alignRight="@+id/history_duration"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/history_dist_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
+        android:minWidth="40dp"
         android:layout_alignTop="@+id/history_dur_val1"
-        android:layout_alignRight="@+id/history_distance" />
+        android:layout_alignRight="@+id/history_distance"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -124,7 +129,8 @@
         android:layout_alignLeft="@+id/history_date_val1"
         android:background="#cfcfcf"
         android:width="65dp"
-        android:minWidth="20dp" />
+        android:minWidth="20dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -133,7 +139,8 @@
         android:layout_alignTop="@+id/history_date_val2"
         android:layout_alignLeft="@+id/history_start_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -142,7 +149,8 @@
         android:layout_alignTop="@+id/history_end_val2"
         android:layout_alignLeft="@+id/history_dist_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -151,7 +159,8 @@
         android:layout_alignTop="@+id/history_dist_val2"
         android:layout_alignLeft="@+id/history_dur_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -160,7 +169,8 @@
         android:layout_alignTop="@+id/history_start_val2"
         android:layout_alignLeft="@+id/history_end_val1"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -171,7 +181,8 @@
         android:layout_toLeftOf="@+id/history_starttime"
         android:background="#cfcfcf"
         android:width="65dp"
-        android:minWidth="20dp" />
+        android:minWidth="20dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -180,7 +191,8 @@
         android:layout_alignTop="@+id/history_date_val3"
         android:layout_alignLeft="@+id/history_start_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,7 +201,8 @@
         android:layout_alignTop="@+id/history_end_val3"
         android:layout_alignLeft="@+id/history_dur_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -198,7 +211,8 @@
         android:layout_alignTop="@+id/history_dur_val3"
         android:layout_alignLeft="@+id/history_dist_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -207,7 +221,8 @@
         android:layout_alignTop="@+id/history_start_val3"
         android:layout_alignLeft="@+id/history_end_val2"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -218,7 +233,8 @@
         android:layout_toLeftOf="@+id/history_starttime"
         android:background="#cfcfcf"
         android:width="65dp"
-        android:minWidth="20dp" />
+        android:minWidth="20dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -227,7 +243,8 @@
         android:layout_alignTop="@+id/history_date_val4"
         android:layout_alignLeft="@+id/history_start_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -236,7 +253,8 @@
         android:layout_alignTop="@+id/history_dist_val4"
         android:layout_alignLeft="@+id/history_dur_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -244,8 +262,9 @@
         android:id="@+id/history_dist_val4"
         android:layout_alignLeft="@+id/history_dist_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:layout_alignTop="@+id/history_end_val4" />
+        android:minWidth="40dp"
+        android:layout_alignTop="@+id/history_end_val4"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -254,7 +273,8 @@
         android:layout_alignTop="@+id/history_start_val4"
         android:layout_alignLeft="@+id/history_end_val3"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -265,7 +285,8 @@
         android:width="65dp"
         android:background="#cfcfcf"
         android:layout_alignParentEnd="false"
-        android:minWidth="20dp" />
+        android:minWidth="20dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -275,7 +296,8 @@
         android:layout_below="@+id/history_start_val4"
         android:layout_alignLeft="@+id/history_start_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -283,8 +305,9 @@
         android:id="@+id/history_dist_val5"
         android:layout_alignLeft="@+id/history_dist_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp"
-        android:layout_alignTop="@+id/history_dur_val5" />
+        android:minWidth="40dp"
+        android:layout_alignTop="@+id/history_dur_val5"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -293,7 +316,8 @@
         android:layout_alignTop="@+id/history_end_val5"
         android:layout_alignLeft="@+id/history_dur_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -302,6 +326,26 @@
         android:layout_alignTop="@+id/history_start_val5"
         android:layout_alignLeft="@+id/history_end_val4"
         android:background="#cfcfcf"
-        android:minWidth="20dp" />
+        android:minWidth="40dp"
+        android:gravity="center_horizontal" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete Run"
+        android:id="@+id/button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#7d7d7d"
+        android:layout_below="@+id/history_title"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

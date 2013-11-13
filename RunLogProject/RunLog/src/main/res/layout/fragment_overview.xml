@@ -18,98 +18,120 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lifetime"
+        android:text="Mileage - Lifetime"
         android:id="@+id/overview_lifetime"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="69dp"
         android:textSize="20dp"
         android:textStyle="bold|italic"
-        android:layout_marginLeft="69dp"
+        android:layout_marginRight="29dp"
         android:layout_below="@+id/overview_title"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignRight="@+id/overview_title" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This Year"
+        android:text="Mileage - This Year"
         android:id="@+id/overview_year"
         android:textSize="20dp"
         android:textStyle="bold|italic"
         android:layout_below="@+id/overview_lifetime"
-        android:layout_alignRight="@+id/overview_lifetime" />
+        android:layout_alignRight="@+id/overview_lifetime"
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This Month"
+        android:text="Mileage - This Month"
         android:id="@+id/overview_month"
         android:textSize="20dp"
         android:textStyle="bold|italic"
         android:layout_below="@+id/overview_year"
-        android:layout_alignRight="@+id/overview_year" />
+        android:layout_alignRight="@+id/overview_year"
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This Week"
+        android:text="Mileage - This Week"
         android:id="@+id/overview_week"
         android:textSize="20dp"
         android:textStyle="bold|italic"
         android:layout_below="@+id/overview_month"
-        android:layout_alignRight="@+id/overview_month" />
+        android:layout_alignRight="@+id/overview_month"
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="value here"
         android:id="@+id/overview_lifetime_val"
         android:textSize="18dp"
-        android:layout_marginRight="47dp"
+        android:minWidth="80dp"
+        android:background="#d1d1d1"
         android:layout_alignTop="@+id/overview_lifetime"
-        android:layout_alignParentRight="true" />
+        android:layout_toRightOf="@+id/overview_title"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="value here"
         android:id="@+id/overview_year_val"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#d1d1d1"
         android:layout_alignTop="@+id/overview_year"
-        android:layout_alignLeft="@+id/overview_lifetime_val"
-        android:textSize="18dp" />
+        android:layout_toRightOf="@+id/overview_lifetime"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="value here"
-        android:id="@+id/overview_today_val"
-        android:layout_alignLeft="@+id/overview_year_val"
+        android:id="@+id/overview_month_val"
         android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#d1d1d1"
+        android:layout_alignTop="@+id/overview_month"
+        android:layout_toRightOf="@+id/overview_lifetime"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/overview_week_val"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#d1d1d1"
+        android:layout_alignTop="@+id/overview_week"
+        android:layout_toRightOf="@+id/overview_lifetime"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mileage - Today"
+        android:id="@+id/overview_today"
+        android:layout_alignRight="@+id/overview_year"
+        android:textSize="20dp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="40dp"
         android:layout_below="@+id/overview_week" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="value here"
-        android:id="@+id/overview_month_val"
-        android:layout_alignTop="@+id/overview_month"
-        android:layout_alignRight="@+id/overview_year_val"
-        android:textSize="18dp" />
+        android:id="@+id/overview_today_val"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#d1d1d1"
+        android:layout_alignTop="@+id/overview_today"
+        android:layout_toRightOf="@+id/overview_lifetime"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="value here"
-        android:id="@+id/overview_week_val"
-        android:layout_alignTop="@+id/overview_week"
-        android:layout_alignRight="@+id/overview_today_val"
-        android:textSize="18dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Today"
-        android:id="@+id/overview_today"
-        android:layout_alignTop="@+id/overview_today_val"
-        android:layout_alignRight="@+id/overview_year"
-        android:textSize="20dp"
-        android:textStyle="bold|italic" />
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#7d7d7d"
+        android:layout_below="@+id/overview_title"
+        android:layout_alignParentRight="true" />
 </RelativeLayout>
