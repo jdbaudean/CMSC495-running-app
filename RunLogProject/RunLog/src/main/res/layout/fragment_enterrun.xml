@@ -61,7 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit Run"
-        android:id="@+id/button"
+        android:id="@+id/enterRun_button_submit"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="49dp"
@@ -74,7 +74,7 @@
         android:ems="10"
         android:id="@+id/enterRun_date_val"
         android:layout_above="@+id/enterRun_distance"
-        android:layout_toRightOf="@+id/button"
+        android:layout_toRightOf="@+id/enterRun_button_submit"
         android:hint="Enter date"
         android:layout_marginBottom="-2dp"
         android:gravity="center_horizontal" />
