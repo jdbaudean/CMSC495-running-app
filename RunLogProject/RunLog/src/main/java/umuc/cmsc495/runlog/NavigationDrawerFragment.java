@@ -62,6 +62,8 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mUserLearnedDrawer;
     private CharSequence mTitle;
 
+
+
     public NavigationDrawerFragment() {
     }
 
