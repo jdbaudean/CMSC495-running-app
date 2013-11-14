@@ -109,7 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Auto-Generate Goals"
-        android:id="@+id/goals_button_autogen"
+        android:id="@+id/goals_generate_button"
         android:layout_below="@+id/goals_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
