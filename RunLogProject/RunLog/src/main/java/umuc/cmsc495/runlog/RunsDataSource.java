@@ -35,16 +35,16 @@ public class RunsDataSource {
         dbHelper.close();
     }
 
-    public RunLogTable createRun(double distance) {
+    public RunLogTable createRun(double distance, String dateString, String durationString) {
 
         ContentValues values = new ContentValues();
         values.put(MySQLiteHelper.COLUMN_DISTANCE, distance);
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String dateString = "2013-10-22";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
+
 
         SimpleDateFormat durationFormat = new SimpleDateFormat("HH:mm:ss");
-        String durationString = "00:31:46";
+
 
         try {
             Date dateDate = dateFormat.parse(dateString);
@@ -103,11 +103,11 @@ public class RunsDataSource {
 
         RunLogTable runSession = new RunLogTable();
         runSession.setId(cursor.getLong(0));
-        runSession.setComment(cursor.getFloat(1));
+        runSession.setDistance(cursor.getFloat(1));
         runSession.setDate(cursor.getLong(2));
         runSession.setDuration(cursor.getLong(3));
         //comment.setDate(dateString);
-        //comment.setComment(dateString);
+        //comment.setDistance(dateString);
         return runSession;
     }
 }

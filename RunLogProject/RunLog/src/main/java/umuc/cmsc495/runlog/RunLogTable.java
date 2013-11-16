@@ -43,7 +43,7 @@ public class RunLogTable {
         return distance;
     }
 
-    public void setComment(double distance) {
+    public void setDistance(double distance) {
         this.distance = distance;
     }
 

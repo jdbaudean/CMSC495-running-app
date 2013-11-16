@@ -13,7 +13,9 @@ import android.widget.EditText;
 
 public class FragmentEnterRun extends Fragment {
     private RunsDataSource dataSource;
-    private double distance;
+    private double distance = 0;
+    private String date;
+    private String duration;
  
     public static Fragment newInstance(Context context) {
         FragmentEnterRun f = new FragmentEnterRun();
@@ -27,17 +29,24 @@ public class FragmentEnterRun extends Fragment {
 
         Button mButton = (Button) root.findViewById(R.id.enterRun_button_submit);
         final EditText editTextRunDistance = (EditText) root.findViewById(R.id.enterRun_distance_val);
+        final EditText editTextRunDate = (EditText) root.findViewById(R.id.enterRun_date_val);
+        final EditText editTextRunDuration = (EditText) root.findViewById(R.id.enterRun_duration_val);
+
         mButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 try {
                     distance = Double.parseDouble(editTextRunDistance.getText().toString());
+                    date = editTextRunDate.getText().toString();
+                    duration = editTextRunDuration.getText().toString();
                 } catch (final NullPointerException e) {
-                    distance = 1;
+                    distance = 0;
+                    date = "0";
+                    duration = "0";
                 }
 
-                dataSource.createRun(distance);
+                dataSource.createRun(distance, date, duration);
             }
         });
 
