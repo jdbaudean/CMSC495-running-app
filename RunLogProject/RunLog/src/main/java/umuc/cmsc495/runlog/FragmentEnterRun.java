@@ -27,6 +27,7 @@ public class FragmentEnterRun extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         final ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_enterrun, null);
 
+        assert root != null;
         Button mButton = (Button) root.findViewById(R.id.enterRun_button_submit);
         final EditText editTextRunDistance = (EditText) root.findViewById(R.id.enterRun_distance_val);
         final EditText editTextRunDate = (EditText) root.findViewById(R.id.enterRun_date_val);

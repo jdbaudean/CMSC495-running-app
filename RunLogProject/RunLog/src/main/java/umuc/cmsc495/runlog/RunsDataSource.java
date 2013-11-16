@@ -96,6 +96,19 @@ public class RunsDataSource {
         return runSessions;
     }
 
+    public double getLifetimeMileage() {
+        Double total = 0.0;
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+                MySQLiteHelper.TABLE_RUNLOG;
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
     private RunLogTable cursorToRunSession(Cursor cursor) {
         //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         //Date date = new Date(cursor.getLong(2));
