@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class RunsDataSource {
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_DISTANCE, MySQLiteHelper.COLUMN_DATE, MySQLiteHelper.COLUMN_DURATION };
+    private Calendar calendar = Calendar.getInstance();
 
     public RunsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -100,6 +102,27 @@ public class RunsDataSource {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG;
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
+    public double getYearlyMileage() {
+        long today;
+        long firstDayOfYear;
+        Double total = 0.0;
+
+        today = calendar.getTimeInMillis();
+        calendar.set(Calendar.YEAR, 0, 1 );
+        firstDayOfYear = calendar.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + firstDayOfYear + " and " + today + ";";
 
         Cursor cursor = database.rawQuery(selectQuery, null);
 

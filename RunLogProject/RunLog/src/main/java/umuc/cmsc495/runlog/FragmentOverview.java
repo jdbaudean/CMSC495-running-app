@@ -22,8 +22,10 @@ public class FragmentOverview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_overview, null);
         TextView text = (TextView) root.findViewById(R.id.overview_lifetime_val);
+        TextView textYearly = (TextView) root.findViewById(R.id.overview_year_val);
 
         text.setText(Double.toString(dataSource.getLifetimeMileage()));
+        textYearly.setText(Double.toString(dataSource.getYearlyMileage()));
 
         return root;
     }
