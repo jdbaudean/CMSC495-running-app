@@ -74,28 +74,34 @@ public class RunsDataSource {
         return newRunLogTable;
     }
 
-    public void deleteRun(RunLogTable runSession) {
-        long id = runSession.getId();
-        System.out.println("Run deleted with id: " + id);
+//    public void deleteRun(RunLogTable runSession) {
+//        long id = runSession.getId();
+//        System.out.println("Run deleted with id: " + id);
+//        database.delete(MySQLiteHelper.TABLE_RUNLOG, MySQLiteHelper.COLUMN_ID
+//                + " = " + id, null);
+//    }
+
+    public void deleteRun(long id) {
         database.delete(MySQLiteHelper.TABLE_RUNLOG, MySQLiteHelper.COLUMN_ID
                 + " = " + id, null);
     }
 
-    public List<RunLogTable> getAllRuns() {
-        List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
+    public Cursor getAllRuns() {
+        //List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
 
-        Cursor cursor = database.query(MySQLiteHelper.TABLE_RUNLOG,
-                allColumns, null, null, null, null, null);
+//        Cursor cursor = database.query(MySQLiteHelper.TABLE_RUNLOG,
+//                allColumns, null, null, null, null, null);
+        return database.query(MySQLiteHelper.TABLE_RUNLOG, allColumns, null, null, null, null, null);
 
-        cursor.moveToFirst();
-        while (!cursor.isAfterLast()) {
-            RunLogTable runSession = cursorToRunSession(cursor);
-            runSessions.add(runSession);
-            cursor.moveToNext();
-        }
-        // make sure to close the cursor
-        cursor.close();
-        return runSessions;
+//        cursor.moveToFirst();
+//        while (!cursor.isAfterLast()) {
+//            RunLogTable runSession = cursorToRunSession(cursor);
+//            runSessions.add(runSession);
+//            cursor.moveToNext();
+//        }
+//        // make sure to close the cursor
+//        cursor.close();
+//        return runSessions;
     }
 
     public double getLifetimeMileage() {
