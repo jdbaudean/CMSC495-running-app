@@ -86,22 +86,23 @@ public class RunsDataSource {
                 + " = " + id, null);
     }
 
-    public Cursor getAllRuns() {
-        //List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
+    public List<RunLogTable> getAllRuns() {
+        List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
 
-//        Cursor cursor = database.query(MySQLiteHelper.TABLE_RUNLOG,
-//                allColumns, null, null, null, null, null);
-        return database.query(MySQLiteHelper.TABLE_RUNLOG, allColumns, null, null, null, null, null);
+        Cursor cursor = database.query(MySQLiteHelper.TABLE_RUNLOG,
+                allColumns, null, null, null, null, null);
 
-//        cursor.moveToFirst();
-//        while (!cursor.isAfterLast()) {
-//            RunLogTable runSession = cursorToRunSession(cursor);
-//            runSessions.add(runSession);
-//            cursor.moveToNext();
-//        }
-//        // make sure to close the cursor
-//        cursor.close();
-//        return runSessions;
+
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            RunLogTable runSession = cursorToRunSession(cursor);
+            runSessions.add(runSession);
+            cursor.moveToNext();
+        }
+        // make sure to close the cursor
+        cursor.close();
+        return runSessions;
+        //return database.query(MySQLiteHelper.TABLE_RUNLOG, allColumns, null, null, null, null, null);
     }
 
     public double getLifetimeMileage() {
