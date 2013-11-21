@@ -73,7 +73,7 @@ public class FragmentHistory extends ListFragment {
                 //long checkId = adapter.getItemId(0);
 
                 for (Integer ids : checkedIds) {
-                    //dataSource.deleteRun(adapter.getItem(ids).getId());
+                    dataSource.deleteRun(adapter.getItem(ids).getId());
                 }
 
                 for (RunLogTable runLogTable : runLogTables) {
