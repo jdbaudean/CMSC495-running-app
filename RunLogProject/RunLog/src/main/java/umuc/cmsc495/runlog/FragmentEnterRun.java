@@ -1,15 +1,17 @@
 package umuc.cmsc495.runlog;
- 
+
 import android.content.Context;
-//import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
+import android.widget.Toast;
+
+//import android.content.DialogInterface;
 
 public class FragmentEnterRun extends Fragment {
     private RunsDataSource dataSource;
@@ -46,7 +48,7 @@ public class FragmentEnterRun extends Fragment {
                     date = "0";
                     duration = "0";
                 }
-
+                Toast.makeText(getActivity(), "msg msg", Toast.LENGTH_SHORT).show();
                 dataSource.createRun(distance, date, duration);
             }
         });
