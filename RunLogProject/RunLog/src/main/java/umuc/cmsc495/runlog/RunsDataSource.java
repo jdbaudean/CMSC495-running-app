@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,9 +25,11 @@ public class RunsDataSource {
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
             MySQLiteHelper.COLUMN_DISTANCE, MySQLiteHelper.COLUMN_DATE, MySQLiteHelper.COLUMN_DURATION };
     private Calendar calendar = Calendar.getInstance();
+    private long today;
 
     public RunsDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
+        today = calendar.getTimeInMillis();
     }
 
     public void open() throws SQLException {
@@ -119,23 +122,107 @@ public class RunsDataSource {
     }
 
     public double getYearlyMileage() {
-        long today;
+        //long today;
         long firstDayOfYear;
         Double total = 0.0;
 
-        today = calendar.getTimeInMillis();
-        calendar.set(Calendar.YEAR, 0, 1 );
+        //today = calendar.getTimeInMillis();
+        calendar.set(Calendar.getInstance().get(Calendar.YEAR), 0, 1 );
         firstDayOfYear = calendar.getTimeInMillis();
 
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
             MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
-            " between " + firstDayOfYear + " and " + today + ";";
+            " between " + firstDayOfYear + " and " + this.today + ";";
 
         Cursor cursor = database.rawQuery(selectQuery, null);
 
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
+        return total;
+    }
+
+    public double getMonthlyMileage() {
+
+        long firstDayOfMonth;
+        Double total = 0.0;
+        Calendar cal = Calendar.getInstance();
+
+        //Clear calendar and get first day of week
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+
+        firstDayOfMonth = cal.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + firstDayOfMonth + " and " + this.today + ";";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        Log.d("My Tag", "Total: " + total);
+        return total;
+    }
+
+    public double getWeeklyMileage() {
+
+        long firstDayOfWeek;
+        Double total = 0.0;
+        Calendar cal = Calendar.getInstance();
+
+        //Clear calendar and get first day of week
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+
+        firstDayOfWeek = cal.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + firstDayOfWeek + " and " + this.today + ";";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        Log.d("My Tag", "Total: " + total);
+        return total;
+    }
+
+    public double getTodayMileage() {
+
+        long startOfDay;
+        Double total = 0.0;
+        Calendar cal = Calendar.getInstance();
+
+        //Clear calendar and get first day of week
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+
+        startOfDay = cal.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + startOfDay + " and " + this.today + ";";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        Log.d("My Tag", "startOfDay: " + startOfDay);
         return total;
     }
 

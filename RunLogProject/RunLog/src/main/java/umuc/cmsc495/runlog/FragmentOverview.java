@@ -22,11 +22,20 @@ public class FragmentOverview extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_overview, null);
+
         TextView text = (TextView) root.findViewById(R.id.overview_lifetime_val);
         TextView textYearly = (TextView) root.findViewById(R.id.overview_year_val);
+        TextView textWeekly = (TextView) root.findViewById(R.id.overview_week_val);
+        TextView textMonthly = (TextView) root.findViewById(R.id.overview_month_val);
+        TextView textToday = (TextView) root.findViewById(R.id.overview_today_val);
 
         text.setText(Double.toString(dataSource.getLifetimeMileage()));
         textYearly.setText(Double.toString(dataSource.getYearlyMileage()));
+        textWeekly.setText(Double.toString(dataSource.getWeeklyMileage()));
+        textMonthly.setText(Double.toString(dataSource.getMonthlyMileage()));
+        textToday.setText(Double.toString(dataSource.getTodayMileage()));
+
+
 
         return root;
     }
