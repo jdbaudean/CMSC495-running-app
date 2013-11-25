@@ -112,7 +112,7 @@ public class FragmentHistory extends ListFragment {
         //listView.setItemChecked(position, true);
 
 
-        Log.d("My Tag", "adapter position: " + adapter.getItem(position).getId());
+        //Log.d("My Tag", "adapter position: " + adapter.getItem(position).getId());
         //Log.d("My Tag", "adapter position: " + checkedIds);
         //listid = adapter.getItem(position).getId();
         if (!textView.isChecked()) {

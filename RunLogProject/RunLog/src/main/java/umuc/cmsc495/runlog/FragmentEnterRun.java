@@ -48,8 +48,12 @@ public class FragmentEnterRun extends Fragment {
                     date = "0";
                     duration = "0";
                 }
-                Toast.makeText(getActivity(), "msg msg", Toast.LENGTH_SHORT).show();
+
                 dataSource.createRun(distance, date, duration);
+                Toast.makeText(getActivity(), "Run Entered", Toast.LENGTH_SHORT).show();
+                editTextRunDate.setText("");
+                editTextRunDistance.setText("");
+                editTextRunDuration.setText("");
             }
         });
 

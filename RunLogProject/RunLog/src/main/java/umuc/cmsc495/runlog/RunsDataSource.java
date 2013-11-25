@@ -22,8 +22,8 @@ public class RunsDataSource {
     // Database fields
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
-    private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_DISTANCE, MySQLiteHelper.COLUMN_DATE, MySQLiteHelper.COLUMN_DURATION };
+    private String[] allColumns = { MySQLiteHelper.COLUMN_ID, MySQLiteHelper.COLUMN_DATE,
+            MySQLiteHelper.COLUMN_DISTANCE, MySQLiteHelper.COLUMN_DURATION };
     private Calendar calendar = Calendar.getInstance();
     private long today;
 
@@ -77,13 +77,6 @@ public class RunsDataSource {
         return newRunLogTable;
     }
 
-//    public void deleteRun(RunLogTable runSession) {
-//        long id = runSession.getId();
-//        System.out.println("Run deleted with id: " + id);
-//        database.delete(MySQLiteHelper.TABLE_RUNLOG, MySQLiteHelper.COLUMN_ID
-//                + " = " + id, null);
-//    }
-
     public void deleteRun(long id) {
         database.delete(MySQLiteHelper.TABLE_RUNLOG, MySQLiteHelper.COLUMN_ID
                 + " = " + id, null);
@@ -93,7 +86,7 @@ public class RunsDataSource {
         List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
 
         Cursor cursor = database.query(MySQLiteHelper.TABLE_RUNLOG,
-                allColumns, null, null, null, null, null);
+                allColumns, null, null, null, null, MySQLiteHelper.COLUMN_DATE + " DESC");
 
 
         cursor.moveToFirst();
@@ -227,17 +220,14 @@ public class RunsDataSource {
     }
 
     private RunLogTable cursorToRunSession(Cursor cursor) {
-        //SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        //Date date = new Date(cursor.getLong(2));
-        //String dateString = dateFormat.format(date);
+
 
         RunLogTable runSession = new RunLogTable();
         runSession.setId(cursor.getLong(0));
-        runSession.setDistance(cursor.getFloat(1));
-        runSession.setDate(cursor.getLong(2));
+        runSession.setDate(cursor.getLong(1));
+        runSession.setDistance(cursor.getFloat(2));
         runSession.setDuration(cursor.getLong(3));
-        //comment.setDate(dateString);
-        //comment.setDistance(dateString);
+
         return runSession;
     }
 }
