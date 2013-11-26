@@ -159,7 +159,6 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        Log.d("My Tag", "Total: " + total);
         return total;
     }
 
@@ -187,7 +186,6 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        Log.d("My Tag", "Total: " + total);
         return total;
     }
 
@@ -215,7 +213,76 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        Log.d("My Tag", "startOfDay: " + startOfDay);
+        return total;
+    }
+
+    public double getMonthlyRecord() {
+        Double total = 0.0;
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+                MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%m-%Y', " + MySQLiteHelper.COLUMN_DATE +
+                "/1000, 'unixepoch') ORDER BY SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") DESC limit 1;";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
+    public double getWeeklyRecord() {
+        Double total = 0.0;
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+                MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%W-%m-%Y', " + MySQLiteHelper.COLUMN_DATE +
+                "/1000, 'unixepoch') ORDER BY SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") DESC limit 1;";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
+    public double getYearlyRecord() {
+        Double total = 0.0;
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+                MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%Y', " + MySQLiteHelper.COLUMN_DATE +
+                "/1000, 'unixepoch') ORDER BY SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") DESC limit 1;";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
+    public double getDailyRecord() {
+        Double total = 0.0;
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+                MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%j-%Y', " + MySQLiteHelper.COLUMN_DATE +
+                "/1000, 'unixepoch') ORDER BY SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") DESC limit 1;";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        return total;
+    }
+
+    public double getRunRecord() {
+        Double total = 0.0;
+        String selectQuery = "SELECT " + MySQLiteHelper.COLUMN_DISTANCE + " FROM " +
+                MySQLiteHelper.TABLE_RUNLOG + " ORDER BY " +
+                MySQLiteHelper.COLUMN_DISTANCE + " DESC limit 1;";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
         return total;
     }
 
