@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="#b1dcff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -11,7 +12,7 @@
         android:id="@+id/goals_title"
         android:textSize="28dp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="36dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -26,7 +27,8 @@
         android:minWidth="130dp"
         android:hint="Enter mileage goal"
         android:inputType="numberDecimal"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textColor="#a8a8a8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -37,7 +39,7 @@
         android:layout_below="@+id/goals_yearly_val"
         android:layout_alignLeft="@+id/goals_yearly_val"
         android:minWidth="80dp"
-        android:background="#c4c4c4"
+        android:background="#a8a8a8"
         android:gravity="center_horizontal" />
 
     <TextView
@@ -49,7 +51,7 @@
         android:layout_alignLeft="@+id/goals_monthly_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#c4c4c4"
+        android:background="#a8a8a8"
         android:gravity="center_horizontal" />
 
     <EditText
@@ -63,7 +65,8 @@
         android:minWidth="130dp"
         android:hint="Enter mileage goal"
         android:inputType="numberDecimal"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:textColor="#a8a8a8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -108,7 +111,7 @@
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
         android:id="@+id/textView"
-        android:textColor="#7d7d7d"
+        android:textColor="#4e4e4e"
         android:layout_below="@+id/goals_title"
         android:layout_centerHorizontal="true" />
 

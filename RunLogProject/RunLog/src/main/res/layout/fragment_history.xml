@@ -3,7 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:minWidth="20dp">
+    android:minWidth="20dp"
+    android:background="#b1dcff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:id="@+id/textView2"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="___________________________________________________________"
+        android:id="@+id/textView"
+        android:textColor="#4e4e4e"
+        android:layout_below="@+id/goals_title"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:id="@+id/group"
@@ -15,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="@string/delete"
-            android:onClick="onClick"/>
+            android:onClick="onClick"
+            android:layout_marginTop="15dp" />
 
         </LinearLayout>
 
@@ -23,7 +46,8 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:text="@string/hello"
+        android:background="#b1dcff" />
 
 
 
