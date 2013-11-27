@@ -6,9 +6,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
- 
+import android.widget.TextView;
+
 public class FragmentGoals extends Fragment {
- 
+    private RunsDataSource dataSource;
+
     public static Fragment newInstance(Context context) {
         FragmentGoals f = new FragmentGoals();
  
@@ -18,7 +20,22 @@ public class FragmentGoals extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_goals, null);
+
+        TextView textGoalsWeekly = (TextView) root.findViewById(R.id.goals_weekly_val);
+        TextView textGoalsMonthly = (TextView) root.findViewById(R.id.goals_monthly_val);
+
+        textGoalsWeekly.setText(String.format("%.2f", dataSource.getWeeklyGoal()));
+        textGoalsMonthly.setText(String.format("%.2f", dataSource.getMonthlyGoal()));
+
         return root;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        dataSource = new RunsDataSource(getActivity());
+        dataSource.open();
+
     }
  
 }

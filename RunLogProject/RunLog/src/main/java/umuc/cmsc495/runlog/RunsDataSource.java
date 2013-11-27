@@ -174,6 +174,7 @@ public class RunsDataSource {
         cal.clear(Calendar.SECOND);
         cal.clear(Calendar.MILLISECOND);
         cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+        cal.add(Calendar.DAY_OF_WEEK, 1);
 
         firstDayOfWeek = cal.getTimeInMillis();
 
@@ -285,6 +286,99 @@ public class RunsDataSource {
         }
         return total;
     }
+
+
+    public double getWeeklyGoal() {
+
+        long firstDayOfLastWeek;
+        long firstDayOfThisWeek;
+        Double increase = 1.10;
+        Double total = 0.0;
+        Calendar cal = Calendar.getInstance();
+
+        //Clear calendar and get first day of week
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.DAY_OF_WEEK, cal.getFirstDayOfWeek());
+
+
+        firstDayOfThisWeek = cal.getTimeInMillis();
+        cal.add(Calendar.WEEK_OF_YEAR, -1);
+        cal.add(Calendar.DAY_OF_WEEK, 1);
+        firstDayOfLastWeek = cal.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + firstDayOfLastWeek + " and " + firstDayOfThisWeek + ";";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        total = (total * increase);
+        return total;
+    }
+
+    public double getMonthlyGoal() {
+
+        long firstDayOfLastMonth;
+        long lastDayOfLastMonth;
+        Double increase = 1.10;
+        Double total = 0.0;
+        Calendar cal = Calendar.getInstance();
+
+        //Clear calendar and get first day of Month
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.clear(Calendar.MINUTE);
+        cal.clear(Calendar.SECOND);
+        cal.clear(Calendar.MILLISECOND);
+        cal.set(Calendar.DAY_OF_MONTH, -1);
+
+        lastDayOfLastMonth = cal.getTimeInMillis();
+
+        cal.add(Calendar.MONTH, -1);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        firstDayOfLastMonth = cal.getTimeInMillis();
+
+        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+            MySQLiteHelper.TABLE_RUNLOG  + " where " + MySQLiteHelper.COLUMN_DATE +
+            " between " + firstDayOfLastMonth + " and " + lastDayOfLastMonth + ";";
+
+        Cursor cursor = database.rawQuery(selectQuery, null);
+
+        if(cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+
+        total = (total * increase);
+        return total;
+    }
+
+//    public double getMonthlyGoal() {
+//        Double total = 0.0;
+//        SimpleDateFormat nowWeek = new SimpleDateFormat("m");
+//        SimpleDateFormat nowYear = new SimpleDateFormat("y");
+//        Integer lastWeek = Integer.parseInt(nowWeek.format(new java.util.Date())) - 1;
+//        Integer thisYear = Integer.parseInt(nowYear.format(new java.util.Date()));
+//
+//
+//
+//        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
+//                MySQLiteHelper.TABLE_RUNLOG + " WHERE strftime('%W-%Y', " + MySQLiteHelper.COLUMN_DATE +
+//                "/1000, 'unixepoch') IS '" + lastWeek + "-" + thisYear + "';";
+//
+//        Cursor cursor = database.rawQuery(selectQuery, null);
+//
+//        if(cursor.moveToFirst()) {
+//            total = cursor.getDouble(0);
+//        }
+//        total = (total * 1.10);
+//        return total;
+//    }
+
 
     private RunLogTable cursorToRunSession(Cursor cursor) {
 

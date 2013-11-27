@@ -28,30 +28,28 @@
         android:inputType="numberDecimal"
         android:gravity="center_horizontal" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goals_monthly_val"
         android:layout_marginTop="39dp"
-        android:textSize="12dp"
+        android:textSize="18dp"
         android:layout_below="@+id/goals_yearly_val"
         android:layout_alignLeft="@+id/goals_yearly_val"
-        android:minWidth="130dp"
-        android:hint="Enter mileage goal"
-        android:inputType="numberDecimal"
+        android:minWidth="80dp"
+        android:background="#c4c4c4"
         android:gravity="center_horizontal" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goals_weekly_val"
         android:layout_marginTop="32dp"
         android:layout_below="@+id/goals_monthly_val"
         android:layout_alignLeft="@+id/goals_monthly_val"
-        android:textSize="12dp"
-        android:minWidth="130dp"
-        android:hint="Enter mileage goal"
-        android:inputType="numberDecimal"
+        android:textSize="18dp"
+        android:minWidth="80dp"
+        android:background="#c4c4c4"
         android:gravity="center_horizontal" />
 
     <EditText
@@ -104,16 +102,6 @@
         android:layout_alignBottom="@+id/goals_daily_val"
         android:layout_alignRight="@+id/goals_weekly" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Auto-Generate Goals"
-        android:id="@+id/goals_button_autogen"
-        android:layout_below="@+id/goals_title"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:clickable="true" />
 
     <TextView
         android:layout_width="wrap_content"
