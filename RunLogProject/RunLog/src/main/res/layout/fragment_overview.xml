@@ -67,7 +67,7 @@
         android:id="@+id/overview_lifetime_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:layout_alignTop="@+id/overview_lifetime"
         android:layout_toRightOf="@+id/overview_title"
         android:gravity="center_horizontal" />
@@ -78,7 +78,7 @@
         android:id="@+id/overview_year_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:layout_alignTop="@+id/overview_year"
         android:layout_toRightOf="@+id/overview_lifetime"
         android:gravity="center_horizontal" />
@@ -89,7 +89,7 @@
         android:id="@+id/overview_month_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:layout_alignTop="@+id/overview_month"
         android:layout_toRightOf="@+id/overview_lifetime"
         android:gravity="center_horizontal" />
@@ -100,7 +100,7 @@
         android:id="@+id/overview_week_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:layout_alignTop="@+id/overview_week"
         android:layout_toRightOf="@+id/overview_lifetime"
         android:gravity="center_horizontal" />
@@ -122,7 +122,7 @@
         android:id="@+id/overview_today_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:layout_alignTop="@+id/overview_today"
         android:layout_toRightOf="@+id/overview_lifetime"
         android:gravity="center_horizontal" />

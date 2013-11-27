@@ -39,7 +39,7 @@
         android:layout_below="@+id/goals_yearly_val"
         android:layout_alignLeft="@+id/goals_yearly_val"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:gravity="center_horizontal" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:layout_alignLeft="@+id/goals_monthly_val"
         android:textSize="18dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8"
+        android:background="#8fafd2"
         android:gravity="center_horizontal" />
 
     <EditText
