@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#b1dcff">
+    android:background="#d6e8ff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,88 +21,90 @@
         android:layout_height="wrap_content"
         android:id="@+id/goals_yearly_val"
         android:textSize="12dp"
-        android:layout_below="@+id/goals_title"
-        android:layout_toRightOf="@+id/goals_title"
-        android:layout_marginTop="137dp"
-        android:minWidth="130dp"
-        android:hint="Enter mileage goal"
+        android:minWidth="100dp"
+        android:hint="Enter goal"
         android:inputType="numberDecimal"
         android:gravity="center_horizontal"
-        android:textColor="#a8a8a8" />
+        android:textColor="#a8a8a8"
+        android:layout_alignBottom="@+id/goals_yearly"
+        android:layout_alignLeft="@+id/goals_daily_val"
+        android:layout_alignRight="@+id/goals_daily_val" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goals_monthly_val"
-        android:layout_marginTop="39dp"
         android:textSize="18dp"
-        android:layout_below="@+id/goals_yearly_val"
-        android:layout_alignLeft="@+id/goals_yearly_val"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignBottom="@+id/goals_monthly"
+        android:layout_alignRight="@+id/goals_daily_val" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goals_weekly_val"
-        android:layout_marginTop="32dp"
-        android:layout_below="@+id/goals_monthly_val"
-        android:layout_alignLeft="@+id/goals_monthly_val"
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/goals_monthly"
+        android:layout_alignLeft="@+id/goals_monthly_val"
+        android:layout_alignRight="@+id/goals_monthly_val" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/goals_daily_val"
-        android:layout_marginTop="41dp"
         android:textSize="12dp"
-        android:layout_below="@+id/goals_weekly_val"
-        android:layout_alignLeft="@+id/goals_weekly_val"
-        android:minWidth="130dp"
-        android:hint="Enter mileage goal"
+        android:minWidth="100dp"
+        android:hint="Enter goal"
         android:inputType="numberDecimal"
         android:gravity="center_horizontal"
-        android:textColor="#a8a8a8" />
+        android:textColor="#a8a8a8"
+        android:layout_alignBottom="@+id/goals_daily"
+        android:layout_toRightOf="@+id/goals_monthly"
+        android:layout_marginLeft="46dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yearly Goal"
+        android:text="Yearly"
         android:id="@+id/goals_yearly"
-        android:layout_alignBottom="@+id/goals_yearly_val"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="36dp"
-        android:textSize="24dp" />
+        android:textSize="20dp"
+        android:layout_marginBottom="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/goals_daily" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Monthly Goal"
+        android:text="Monthly"
         android:id="@+id/goals_monthly"
-        android:textSize="24dp"
-        android:layout_above="@+id/goals_weekly_val"
-        android:layout_alignRight="@+id/goals_yearly" />
+        android:textSize="20dp"
+        android:layout_marginTop="37dp"
+        android:layout_below="@+id/goals_weekly"
+        android:layout_alignRight="@+id/goals_weekly" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weekly Goal"
+        android:text="Weekly"
         android:id="@+id/goals_weekly"
-        android:textSize="24dp"
-        android:layout_above="@+id/goals_daily_val"
-        android:layout_alignRight="@+id/goals_monthly" />
+        android:textSize="20dp"
+        android:layout_marginTop="48dp"
+        android:layout_below="@+id/goals_subtitle_auto"
+        android:layout_toLeftOf="@+id/goals_title" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Daily Goal"
+        android:text="Daily"
         android:id="@+id/goals_daily"
-        android:textSize="24dp"
-        android:layout_alignBottom="@+id/goals_daily_val"
+        android:textSize="20dp"
+        android:layout_marginBottom="24dp"
+        android:layout_above="@+id/goals_yearly_val"
         android:layout_alignRight="@+id/goals_weekly" />
 
 
@@ -110,9 +112,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
-        android:id="@+id/textView"
+        android:id="@+id/goals_separator"
         android:textColor="#4e4e4e"
         android:layout_below="@+id/goals_title"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auto-Generated Goals"
+        android:id="@+id/goals_subtitle_auto"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/goals_separator"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User-Defined Goals"
+        android:id="@+id/goals_subtitle_manual"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp"
+        android:layout_above="@+id/goals_daily_val"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

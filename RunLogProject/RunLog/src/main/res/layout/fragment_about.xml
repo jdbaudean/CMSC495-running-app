@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#b1dcff">
+    android:background="#d6e8ff"
+    android:clickable="false">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,35 +20,37 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RunLog\nVersion 1.0"
-        android:id="@+id/about_version"
+        android:text="RunLog\n"
+        android:id="@+id/about_version_heading"
         android:autoText="false"
         android:gravity="center_horizontal"
-        android:textSize="20dp"
-        android:textStyle="italic"
-        android:layout_above="@+id/about_developed_by"
+        android:textSize="40dp"
+        android:textStyle="bold|italic"
+        android:textColor="#287fd2"
+        android:paddingTop="-5dp"
+        android:layout_below="@+id/about_separator"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="45dp" />
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Developed By:\nJD Baudean\nRyan Beck\nJosh Ronk\nTim Roudebush\nTaylor Thomas\nKatie Wolfe"
+        android:text="JD Baudean\nRyan Beck\nJosh Ronk\nTim Roudebush\nTaylor Thomas\nKatie Wolfe"
         android:id="@+id/about_developed_by"
         android:gravity="center_horizontal"
         android:textSize="16dp"
-        android:layout_marginBottom="36dp"
-        android:layout_above="@+id/about_developed_for"
+        android:layout_marginBottom="35dp"
+        android:layout_above="@+id/about_developed_for_heading"
         android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Developed For:\nProfessor Duane Jarc\nCMSC495\nFall 2013 "
+        android:text="Professor Duane Jarc\nCMSC495\nFall 2013 "
         android:id="@+id/about_developed_for"
         android:gravity="center_horizontal"
         android:textSize="16dp"
-        android:layout_marginBottom="54dp"
+        android:layout_marginBottom="32dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
@@ -55,8 +58,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
-        android:id="@+id/textView"
+        android:id="@+id/about_separator"
         android:textColor="#4e4e4e"
         android:layout_below="@+id/about_title"
         android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed By:"
+        android:id="@+id/about_developed_by_heading"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/about_developed_by"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Developed For:"
+        android:id="@+id/about_developed_for_heading"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_above="@+id/about_developed_for"
+        android:layout_alignLeft="@+id/about_version_heading" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Version 1.1"
+        android:id="@+id/about_version"
+        android:textStyle="bold|italic"
+        android:textSize="20dp"
+        android:layout_alignBottom="@+id/about_version_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp" />
 </RelativeLayout>

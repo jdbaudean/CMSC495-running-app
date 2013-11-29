@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:minWidth="20dp"
-    android:background="#b1dcff">
+    android:background="#d6e8ff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -410,7 +410,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
-        android:id="@+id/textView"
+        android:id="@+id/equipment_separator"
         android:textColor="#4e4e4e"
         android:layout_below="@+id/equipment_title"
         android:layout_centerHorizontal="true" />

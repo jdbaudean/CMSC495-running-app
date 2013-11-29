@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#b1dcff">
+    android:background="#d6e8ff"
+    android:clickable="true">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,22 +20,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mileage - Lifetime"
+        android:text="Lifetime"
         android:id="@+id/overview_lifetime"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="56dp"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:layout_marginRight="29dp"
-        android:layout_below="@+id/overview_title"
-        android:layout_alignRight="@+id/overview_title" />
+        android:layout_below="@+id/overview_subtitle"
+        android:layout_toLeftOf="@+id/overview_subtitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mileage - This Year"
+        android:text="This Year"
         android:id="@+id/overview_year"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_below="@+id/overview_lifetime"
         android:layout_alignRight="@+id/overview_lifetime"
         android:layout_marginTop="40dp" />
@@ -42,10 +40,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mileage - This Month"
+        android:text="This Month"
         android:id="@+id/overview_month"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_below="@+id/overview_year"
         android:layout_alignRight="@+id/overview_year"
         android:layout_marginTop="40dp" />
@@ -53,10 +50,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mileage - This Week"
+        android:text="This Week"
         android:id="@+id/overview_week"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_below="@+id/overview_month"
         android:layout_alignRight="@+id/overview_month"
         android:layout_marginTop="40dp" />
@@ -68,9 +64,9 @@
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:layout_alignTop="@+id/overview_lifetime"
-        android:layout_toRightOf="@+id/overview_title"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/overview_year"
+        android:layout_toRightOf="@+id/overview_subtitle" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -79,9 +75,9 @@
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:layout_alignTop="@+id/overview_year"
-        android:layout_toRightOf="@+id/overview_lifetime"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignBottom="@+id/overview_year"
+        android:layout_alignLeft="@+id/overview_lifetime_val" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -90,9 +86,9 @@
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:layout_alignTop="@+id/overview_month"
-        android:layout_toRightOf="@+id/overview_lifetime"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_above="@+id/overview_week"
+        android:layout_alignLeft="@+id/overview_year_val" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -101,18 +97,17 @@
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:layout_alignTop="@+id/overview_week"
-        android:layout_toRightOf="@+id/overview_lifetime"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignBottom="@+id/overview_week"
+        android:layout_alignLeft="@+id/overview_month_val" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mileage - Today"
+        android:text="Today"
         android:id="@+id/overview_today"
         android:layout_alignRight="@+id/overview_year"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/overview_week" />
 
@@ -123,17 +118,28 @@
         android:textSize="18dp"
         android:minWidth="80dp"
         android:background="#8fafd2"
-        android:layout_alignTop="@+id/overview_today"
-        android:layout_toRightOf="@+id/overview_lifetime"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        android:layout_alignBottom="@+id/overview_today"
+        android:layout_alignLeft="@+id/overview_week_val" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
-        android:id="@+id/textView"
+        android:id="@+id/overview_separator"
         android:textColor="#4e4e4e"
         android:layout_below="@+id/overview_title"
         android:layout_alignParentRight="true"
         android:singleLine="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mileage Totals"
+        android:id="@+id/overview_subtitle"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/overview_separator"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
 </RelativeLayout>

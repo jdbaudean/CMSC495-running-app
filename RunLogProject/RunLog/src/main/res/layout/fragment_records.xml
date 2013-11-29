@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#b1dcff">
+    android:background="#d6e8ff">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,67 +19,62 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Most Mileage in a Run"
+        android:text="Individual"
         android:id="@+id/records_run"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_below="@+id/records_day_val"
         android:layout_alignRight="@+id/records_day"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="28dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Most Mileage in a Day"
+        android:text="Daily"
         android:id="@+id/records_day"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="28dp"
         android:layout_below="@+id/records_week"
-        android:layout_toLeftOf="@+id/records_year_val" />
+        android:layout_alignRight="@+id/records_week" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Most Mileage in a Week"
+        android:text="Weekly"
         android:id="@+id/records_week"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/records_month"
-        android:layout_marginBottom="-10dp" />
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/records_month"
+        android:layout_alignRight="@+id/records_month" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Most Mileage in a Month"
+        android:text="Monthly"
         android:id="@+id/records_month"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
         android:layout_alignBottom="@+id/records_month_val"
         android:layout_alignRight="@+id/records_year" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Most Mileage in a Year"
+        android:text="Yearly"
         android:id="@+id/records_year"
         android:textSize="20dp"
-        android:textStyle="bold|italic"
-        android:layout_marginTop="53dp"
-        android:layout_below="@+id/records_title"
-        android:layout_alignRight="@+id/records_title" />
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/records_subtitle"
+        android:layout_toLeftOf="@+id/records_subtitle" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/records_year_val"
         android:textSize="18dp"
-        android:layout_alignTop="@+id/records_year"
-        android:layout_toRightOf="@+id/records_title"
-        android:layout_marginLeft="20dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8" />
+        android:background="#8fafd2"
+        android:layout_alignBottom="@+id/records_year"
+        android:layout_toRightOf="@+id/records_subtitle"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -89,7 +84,8 @@
         android:layout_alignBottom="@+id/records_day"
         android:layout_alignLeft="@+id/records_year_val"
         android:minWidth="80dp"
-        android:background="#a8a8a8" />
+        android:background="#8fafd2"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -99,18 +95,20 @@
         android:layout_alignTop="@+id/records_week"
         android:layout_alignLeft="@+id/records_day_val"
         android:minWidth="80dp"
-        android:background="#a8a8a8" />
+        android:background="#8fafd2"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/records_month_val"
         android:textSize="18dp"
-        android:layout_below="@+id/records_year"
-        android:layout_alignLeft="@+id/records_year_val"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="30dp"
         android:minWidth="80dp"
-        android:background="#a8a8a8" />
+        android:background="#8fafd2"
+        android:layout_below="@+id/records_year"
+        android:layout_toRightOf="@+id/records_subtitle"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -120,13 +118,14 @@
         android:layout_alignBottom="@+id/records_run"
         android:layout_alignLeft="@+id/records_day_val"
         android:minWidth="80dp"
-        android:background="#a8a8a8" />
+        android:background="#8fafd2"
+        android:gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="___________________________________________________________"
-        android:id="@+id/textView"
+        android:id="@+id/records_separator"
         android:layout_below="@+id/records_title"
         android:layout_alignParentRight="true"
         android:textColor="#4e4e4e" />
@@ -137,9 +136,20 @@
         android:layout_height="wrap_content"
         android:text="Reset All Records"
         android:id="@+id/records_button_reset"
+        android:layout_marginBottom="23dp"
+        android:clickable="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mileage Records"
+        android:id="@+id/records_subtitle"
+        android:layout_below="@+id/records_separator"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="37dp"
-        android:clickable="true" />
+        android:layout_marginTop="24dp"
+        android:textSize="14dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
