@@ -85,22 +85,25 @@
         android:layout_width="match_parent">
 
         <TextView android:id="@+id/column_header1"
-            android:layout_width="0dp"
+            android:layout_width="100dp"
             android:text="Date"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             />
         <TextView android:id="@+id/column_header2"
-            android:layout_width="0dp"
+            android:layout_width="60dp"
             android:text="Distance"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             />
         <TextView android:id="@+id/column_header3"
-            android:layout_width="0dp"
+            android:layout_width="80dp"
             android:text="Time"
+            android:gravity="center"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0"
             />
     </LinearLayout>
 
