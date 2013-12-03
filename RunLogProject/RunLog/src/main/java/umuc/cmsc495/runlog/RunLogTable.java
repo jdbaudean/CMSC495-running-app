@@ -55,6 +55,6 @@ public class RunLogTable {
 
         SimpleDateFormat durationFormat = new SimpleDateFormat("HH:mm:ss");
         Date durationDate = new Date(this.duration);
-        return distance + " " + dateFormat.format(date) + " " + durationFormat.format(durationDate);
+        return dateFormat.format(date) + "     " + distance + "     " + durationFormat.format(durationDate);
     }
 }
