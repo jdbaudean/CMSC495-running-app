@@ -98,7 +98,7 @@ public class RunsDataSource {
         // make sure to close the cursor
         cursor.close();
         return runSessions;
-        //return database.query(MySQLiteHelper.TABLE_RUNLOG, allColumns, null, null, null, null, null);
+
     }
 
     public double getLifetimeMileage() {
@@ -356,29 +356,6 @@ public class RunsDataSource {
         total = (total * increase);
         return total;
     }
-
-//    public double getMonthlyGoal() {
-//        Double total = 0.0;
-//        SimpleDateFormat nowWeek = new SimpleDateFormat("m");
-//        SimpleDateFormat nowYear = new SimpleDateFormat("y");
-//        Integer lastWeek = Integer.parseInt(nowWeek.format(new java.util.Date())) - 1;
-//        Integer thisYear = Integer.parseInt(nowYear.format(new java.util.Date()));
-//
-//
-//
-//        String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
-//                MySQLiteHelper.TABLE_RUNLOG + " WHERE strftime('%W-%Y', " + MySQLiteHelper.COLUMN_DATE +
-//                "/1000, 'unixepoch') IS '" + lastWeek + "-" + thisYear + "';";
-//
-//        Cursor cursor = database.rawQuery(selectQuery, null);
-//
-//        if(cursor.moveToFirst()) {
-//            total = cursor.getDouble(0);
-//        }
-//        total = (total * 1.10);
-//        return total;
-//    }
-
 
     private RunLogTable cursorToRunSession(Cursor cursor) {
 
