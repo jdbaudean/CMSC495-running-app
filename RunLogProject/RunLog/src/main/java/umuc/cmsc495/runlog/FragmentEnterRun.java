@@ -15,7 +15,6 @@ import android.widget.Toast;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-//import android.content.DialogInterface;
 
 public class FragmentEnterRun extends Fragment {
     private RunsDataSource dataSource;
@@ -83,10 +82,12 @@ public class FragmentEnterRun extends Fragment {
     }
 
     public static boolean isDateValid(String text) {
-        if (text == null || !text.matches("\\d{2}-\\d{2}-\\d{4}"))
-            return false;
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
         dateFormat.setLenient(false);
+
+        if (text == null || !text.matches("\\d{2}-\\d{2}-\\d{4}"))
+            return false;
+
         try {
             dateFormat.parse(text);
             return true;
@@ -96,10 +97,7 @@ public class FragmentEnterRun extends Fragment {
     }
 
     public static boolean isDurationValid(String text) {
-        if (text == null || !text.matches("\\d{2}:\\d{2}:\\d{2}"))
-            return false;
-        else
-            return true;
+        return (text == null || !text.matches("\\d{2}:\\d{2}:\\d{2}"));
     }
 
 }

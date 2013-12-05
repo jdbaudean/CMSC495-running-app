@@ -29,11 +29,11 @@ public class FragmentRecords extends Fragment {
         TextView textRecordsRun = (TextView) root.findViewById(R.id.records_run_val);
         TextView textRecordsYear = (TextView) root.findViewById(R.id.records_year_val);
 
-        textRecordsMonth.setText(Double.toString(dataSource.getMonthlyRecord()));
-        textRecordsWeek.setText(Double.toString(dataSource.getWeeklyRecord()));
-        textRecordsDay.setText(Double.toString(dataSource.getDailyRecord()));
-        textRecordsRun.setText(Double.toString(dataSource.getRunRecord()));
-        textRecordsYear.setText(Double.toString(dataSource.getYearlyRecord()));
+        textRecordsMonth.setText(dataSource.getMonthlyRecord());
+        textRecordsWeek.setText(dataSource.getWeeklyRecord());
+        textRecordsDay.setText(dataSource.getDailyRecord());
+        textRecordsRun.setText(dataSource.getRunRecord());
+        textRecordsYear.setText(dataSource.getYearlyRecord());
 
 
         return root;

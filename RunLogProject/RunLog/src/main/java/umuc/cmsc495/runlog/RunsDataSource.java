@@ -101,7 +101,7 @@ public class RunsDataSource {
 
     }
 
-    public double getLifetimeMileage() {
+    public String getLifetimeMileage() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG;
@@ -111,10 +111,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getYearlyMileage() {
+    public String getYearlyMileage() {
         //long today;
         long firstDayOfYear;
         Double total = 0.0;
@@ -132,10 +132,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getMonthlyMileage() {
+    public String getMonthlyMileage() {
 
         long firstDayOfMonth;
         Double total = 0.0;
@@ -159,10 +159,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getWeeklyMileage() {
+    public String getWeeklyMileage() {
 
         long firstDayOfWeek;
         Double total = 0.0;
@@ -187,10 +187,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getTodayMileage() {
+    public String getTodayMileage() {
 
         long startOfDay;
         Double total = 0.0;
@@ -214,10 +214,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getMonthlyRecord() {
+    public String getMonthlyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%m-%Y', " + MySQLiteHelper.COLUMN_DATE +
@@ -228,10 +228,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getWeeklyRecord() {
+    public String getWeeklyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%W-%m-%Y', " + MySQLiteHelper.COLUMN_DATE +
@@ -242,10 +242,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getYearlyRecord() {
+    public String getYearlyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%Y', " + MySQLiteHelper.COLUMN_DATE +
@@ -256,10 +256,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getDailyRecord() {
+    public String getDailyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
                 MySQLiteHelper.TABLE_RUNLOG + " GROUP BY strftime('%j-%Y', " + MySQLiteHelper.COLUMN_DATE +
@@ -270,10 +270,10 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getRunRecord() {
+    public String getRunRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT " + MySQLiteHelper.COLUMN_DISTANCE + " FROM " +
                 MySQLiteHelper.TABLE_RUNLOG + " ORDER BY " +
@@ -284,11 +284,11 @@ public class RunsDataSource {
         if(cursor.moveToFirst()) {
             total = cursor.getDouble(0);
         }
-        return total;
+        return String.format("%.2f", total);
     }
 
 
-    public double getWeeklyGoal() {
+    public String getWeeklyGoal() {
 
         long firstDayOfLastWeek;
         long firstDayOfThisWeek;
@@ -319,10 +319,10 @@ public class RunsDataSource {
             total = cursor.getDouble(0);
         }
         total = (total * increase);
-        return total;
+        return String.format("%.2f", total);
     }
 
-    public double getMonthlyGoal() {
+    public String getMonthlyGoal() {
 
         long firstDayOfLastMonth;
         long lastDayOfLastMonth;
@@ -354,7 +354,7 @@ public class RunsDataSource {
         }
 
         total = (total * increase);
-        return total;
+        return String.format("%.2f", total);
     }
 
     private RunLogTable cursorToRunSession(Cursor cursor) {

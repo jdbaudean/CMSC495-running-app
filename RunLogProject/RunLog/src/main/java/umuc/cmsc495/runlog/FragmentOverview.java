@@ -29,11 +29,11 @@ public class FragmentOverview extends Fragment {
         TextView textMonthly = (TextView) root.findViewById(R.id.overview_month_val);
         TextView textToday = (TextView) root.findViewById(R.id.overview_today_val);
 
-        text.setText(Double.toString(dataSource.getLifetimeMileage()));
-        textYearly.setText(Double.toString(dataSource.getYearlyMileage()));
-        textWeekly.setText(Double.toString(dataSource.getWeeklyMileage()));
-        textMonthly.setText(Double.toString(dataSource.getMonthlyMileage()));
-        textToday.setText(Double.toString(dataSource.getTodayMileage()));
+        text.setText(dataSource.getLifetimeMileage());
+        textYearly.setText(dataSource.getYearlyMileage());
+        textWeekly.setText(dataSource.getWeeklyMileage());
+        textMonthly.setText(dataSource.getMonthlyMileage());
+        textToday.setText(dataSource.getTodayMileage());
 
 
 
