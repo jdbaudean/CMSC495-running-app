@@ -97,7 +97,7 @@ public class FragmentEnterRun extends Fragment {
     }
 
     public static boolean isDurationValid(String text) {
-        return (text == null || !text.matches("\\d{2}:\\d{2}:\\d{2}"));
+        return (text != null && text.matches("\\d{2}:\\d{2}:\\d{2}"));
     }
 
 }
