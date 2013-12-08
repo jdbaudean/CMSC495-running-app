@@ -24,8 +24,8 @@ public class FragmentGoals extends Fragment {
         TextView textGoalsWeekly = (TextView) root.findViewById(R.id.goals_weekly_val);
         TextView textGoalsMonthly = (TextView) root.findViewById(R.id.goals_monthly_val);
 
-        textGoalsWeekly.setText(String.format("%.2f", dataSource.getWeeklyGoal()));
-        textGoalsMonthly.setText(String.format("%.2f", dataSource.getMonthlyGoal()));
+        textGoalsWeekly.setText(dataSource.getWeeklyGoal());
+        textGoalsMonthly.setText(dataSource.getMonthlyGoal());
 
         return root;
     }
