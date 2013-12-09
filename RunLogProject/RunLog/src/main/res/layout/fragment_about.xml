@@ -46,7 +46,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Professor Duane Jarc\nCMSC495\nFall 2013 "
+        android:text="Professor Nick Duchon\nCMSC495\nFall 2013 "
         android:id="@+id/about_developed_for"
         android:gravity="center_horizontal"
         android:textSize="16dp"

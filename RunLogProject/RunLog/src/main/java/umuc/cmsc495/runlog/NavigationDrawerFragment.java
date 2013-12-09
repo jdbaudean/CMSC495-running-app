@@ -1,3 +1,8 @@
+/**
+ * Fragment used for the Navigation Drawer that comes from the left side of the App.
+ * This Fragment is used to launch most of the other Fragments in this app.
+ */
+
 package umuc.cmsc495.runlog;
 
 import android.app.Activity;

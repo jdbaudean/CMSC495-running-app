@@ -1,3 +1,7 @@
+/**
+ * Fragment used to enter new runs
+ */
+
 package umuc.cmsc495.runlog;
 
 import android.content.Context;
@@ -42,10 +46,14 @@ public class FragmentEnterRun extends Fragment {
         editTextRunDate.setText("");
         editTextRunDuration.setText("");
 
+        /**
+         * Listener for the Submit Run button
+        */
         mButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                //Input Validation
                 if (!isDateValid(editTextRunDate.getText().toString())) {
                     editTextRunDate.setError("Date Format is MM-DD-YYYY");
                     Log.d("My Tag", "Date Error");
@@ -57,13 +65,17 @@ public class FragmentEnterRun extends Fragment {
                     Log.d("My Tag", "Duration error");
                 } else {
 
+                    // Change entries to the proper data type
                     distance = Double.parseDouble(editTextRunDistance.getText().toString());
-
                     date = editTextRunDate.getText().toString();
                     duration = editTextRunDuration.getText().toString();
 
+                    // Insert values into database
                     dataSource.createRun(distance, date, duration);
                     Toast.makeText(getActivity(), "Run Entered", Toast.LENGTH_SHORT).show();
+
+                    // Set the values back to an empty string so the fields are cleared
+                    // and the original Text hints display properly
                     editTextRunDate.setText("");
                     editTextRunDistance.setText("");
                     editTextRunDuration.setText("");
@@ -77,10 +89,20 @@ public class FragmentEnterRun extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Creates and opens a new database object
         dataSource = new RunsDataSource(getActivity());
         dataSource.open();
     }
 
+    /**
+     *
+     * @param text
+     * Provide a date to validate
+     *
+     * @return boolean
+     * Returns true if the date is formatted correctly, false if it is not
+     */
     public static boolean isDateValid(String text) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
         dateFormat.setLenient(false);
@@ -96,6 +118,13 @@ public class FragmentEnterRun extends Fragment {
         }
     }
 
+    /**
+     * @param text
+     * Duration time string to be validated
+     *
+     * @return boolean
+     * Returns true of the String entered matches HH:MM:SS, false if it doesn't
+     */
     public static boolean isDurationValid(String text) {
         return (text != null && text.matches("\\d{2}:\\d{2}:\\d{2}"));
     }

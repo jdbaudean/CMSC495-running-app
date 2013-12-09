@@ -1,3 +1,8 @@
+/**
+ * Fragment that displays the About section
+ */
+
+
 package umuc.cmsc495.runlog;
  
 import android.content.Context;

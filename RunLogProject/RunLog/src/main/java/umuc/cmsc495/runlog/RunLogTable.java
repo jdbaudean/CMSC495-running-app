@@ -1,11 +1,13 @@
+/**
+ * This class is the model for the runlog Table and contains the data that will be saved into
+ * the database and shown in the UI.
+ */
+
 package umuc.cmsc495.runlog;
 
 import java.lang.Override;import java.lang.String;import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by jd on 11/11/13.
- */
 public class RunLogTable {
 
     private long id;

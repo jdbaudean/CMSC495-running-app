@@ -1,3 +1,8 @@
+/**
+ *  Sqlite helper class.  This is used to create the database if it doesn't already
+ *  exist and upgrade the database.  All tables and columns should be listed in this class
+ */
+
 package umuc.cmsc495.runlog;
 
 import android.content.Context;
@@ -5,9 +10,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-/**
- * Created by jd on 11/11/13.
- */
 public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String TABLE_RUNLOG = "runlog";
     public static final String COLUMN_ID = "_id";

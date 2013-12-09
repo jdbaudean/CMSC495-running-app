@@ -1,3 +1,15 @@
+/**
+ *  CMSC 495
+ *  RunLog project
+ *  JD Baudean, Tim Roudebush, Katie Wolfe, Josh Ronk, Ryan Beck, Taylor Thomas
+ *  12-09-2013
+ *  Java 1.7
+ *
+ *  Main Activity used to launch the Navigation Drawer Fragment.
+ *  The rest of the app is controlled by the corresponding Fragments
+ */
+
+
 package umuc.cmsc495.runlog;
 
 import android.os.Bundle;
@@ -42,6 +54,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
 

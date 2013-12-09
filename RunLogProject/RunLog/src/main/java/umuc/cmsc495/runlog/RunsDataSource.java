@@ -1,3 +1,9 @@
+/**
+ * This class acts as the Data Access Object (DAO) for the RUNLOG Database.  It is used
+ * for all access operations on the database.
+ */
+
+
 package umuc.cmsc495.runlog;
 
 import android.content.ContentValues;
@@ -14,9 +20,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by jd on 11/11/13.
- */
 public class RunsDataSource {
 
     // Database fields
