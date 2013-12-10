@@ -43,6 +43,19 @@ public class RunsDataSource {
         dbHelper.close();
     }
 
+    /**
+     *
+     * @param distance
+     * Distance of Run
+     *
+     * @param dateString
+     * Date of Run
+     * @param durationString
+     * Duration of Run
+     *
+     * @return
+     * Returns row of table
+     */
     public RunLogTable createRun(double distance, String dateString, String durationString) {
 
         ContentValues values = new ContentValues();
@@ -80,11 +93,23 @@ public class RunsDataSource {
         return newRunLogTable;
     }
 
+    /**
+     * Deletes a row from the table
+     *
+     * @param id
+     * Row ID to be deleted
+     */
     public void deleteRun(long id) {
         database.delete(MySQLiteHelper.TABLE_RUNLOG, MySQLiteHelper.COLUMN_ID
                 + " = " + id, null);
     }
 
+    /**
+     * Get all runs from the runlog table in Descending order by Date
+     *
+     * @return
+     * List of rows from the runlog table
+     */
     public List<RunLogTable> getAllRuns() {
         List<RunLogTable> runSessions = new ArrayList<RunLogTable>();
 
@@ -98,12 +123,17 @@ public class RunsDataSource {
             runSessions.add(runSession);
             cursor.moveToNext();
         }
-        // make sure to close the cursor
         cursor.close();
         return runSessions;
 
     }
 
+    /**
+     * Calculates all run mileage from the runlog database
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places.
+     */
     public String getLifetimeMileage() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
@@ -117,6 +147,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculates all mileage from the current year
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getYearlyMileage() {
         //long today;
         long firstDayOfYear;
@@ -138,6 +174,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculates all mileage from the current month
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getMonthlyMileage() {
 
         long firstDayOfMonth;
@@ -165,6 +207,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate all mileage form the current week
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getWeeklyMileage() {
 
         long firstDayOfWeek;
@@ -193,6 +241,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate all mileage from the current day
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getTodayMileage() {
 
         long startOfDay;
@@ -220,6 +274,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate the most mileage in a single month
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getMonthlyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
@@ -234,6 +294,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate the most mileage in a single week
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getWeeklyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
@@ -248,6 +314,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate the most mileage in a single year
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getYearlyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
@@ -262,6 +334,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate the most mileage in a single day
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getDailyRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT SUM(" + MySQLiteHelper.COLUMN_DISTANCE + ") FROM " +
@@ -276,6 +354,12 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate the most mileage in a single run
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getRunRecord() {
         Double total = 0.0;
         String selectQuery = "SELECT " + MySQLiteHelper.COLUMN_DISTANCE + " FROM " +
@@ -290,7 +374,13 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
-
+    /**
+     * Calculate total mileage from the previous week and return 110% of that value
+     * to create a goal for the current week
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getWeeklyGoal() {
 
         long firstDayOfLastWeek;
@@ -325,6 +415,13 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     * Calculate total mileage from the previous month and return 110% of that value
+     * to create a goal for the current month
+     *
+     * @return
+     * Return a String from a double formatted with a precision of 2 decimal places
+     */
     public String getMonthlyGoal() {
 
         long firstDayOfLastMonth;
@@ -360,8 +457,15 @@ public class RunsDataSource {
         return String.format("%.2f", total);
     }
 
+    /**
+     *
+     * @param cursor
+     * Cursor that accesses the result set returned by a database query
+     *
+     * @return
+     * Returns a row from the runlog table
+     */
     private RunLogTable cursorToRunSession(Cursor cursor) {
-
 
         RunLogTable runSession = new RunLogTable();
         runSession.setId(cursor.getLong(0));

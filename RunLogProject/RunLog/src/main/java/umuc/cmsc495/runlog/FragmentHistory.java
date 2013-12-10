@@ -38,13 +38,18 @@ public class FragmentHistory extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_history, null);
-        List<RunLogTable> values = dataSource.getAllRuns();
 
-        adapter = new ArrayAdapter<RunLogTable>(getActivity(), android.R.layout.simple_list_item_checked, values);
         checkedIds = new HashSet<Integer>();
         runLogTables = new ArrayList<RunLogTable>();
         checkedTextViews = new ArrayList<CheckedTextView>();
 
+        // Creates a list of all runs in the database
+        List<RunLogTable> values = dataSource.getAllRuns();
+
+        // Adds the list to the adapter
+        adapter = new ArrayAdapter<RunLogTable>(getActivity(), android.R.layout.simple_list_item_checked, values);
+
+        // Adds the adapter to the List and displays it on the page
         setListAdapter(adapter);
 
 

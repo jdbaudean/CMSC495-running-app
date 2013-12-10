@@ -24,7 +24,6 @@ public class RunLogTable {
         this.duration = duration;
     }
 
-
     public long getDate() {
         return date;
     }
@@ -49,7 +48,13 @@ public class RunLogTable {
         this.distance = distance;
     }
 
-    // Will be used by the ArrayAdapter in the ListView
+    /**
+     * Used by the ArrayAdapter in FragmentHistory
+     *
+     * @return String
+     * Returns a String consisting of the date, distance, and duration
+     * of a single run from the database
+     */
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
@@ -57,6 +62,8 @@ public class RunLogTable {
 
         SimpleDateFormat durationFormat = new SimpleDateFormat("HH:mm:ss");
         Date durationDate = new Date(this.duration);
+
+
         return dateFormat.format(date) + "     " + String.format("%.2f", distance) + "     " + durationFormat.format(durationDate);
     }
 }
