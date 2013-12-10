@@ -21,10 +21,10 @@
         android:layout_height="wrap_content"
         android:text="Run Date"
         android:id="@+id/enterRun_date"
-        android:layout_marginTop="52dp"
         android:textSize="20dp"
-        android:layout_below="@+id/enterRun_separator"
-        android:layout_alignRight="@+id/enterRun_distance" />
+        android:layout_above="@+id/enterRun_distance_val"
+        android:layout_alignRight="@+id/enterRun_distance"
+        android:layout_marginBottom="62dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,8 +32,8 @@
         android:text="Total Distance"
         android:id="@+id/enterRun_distance"
         android:textSize="20dp"
-        android:layout_alignBottom="@+id/enterRun_distance_val"
-        android:layout_alignRight="@+id/enterRun_duration" />
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/enterRun_button_submit" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,20 +41,9 @@
         android:text="Total Duration"
         android:id="@+id/enterRun_duration"
         android:textSize="20dp"
-        android:layout_above="@+id/enterRun_equipUsed"
-        android:layout_alignRight="@+id/enterRun_equipUsed"
-        android:layout_marginBottom="43dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Equipment Used"
-        android:id="@+id/enterRun_equipUsed"
-        android:textSize="20dp"
-        android:layout_marginLeft="29dp"
+        android:layout_marginBottom="56dp"
         android:layout_above="@+id/enterRun_button_submit"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="52dp" />
+        android:layout_toLeftOf="@+id/enterRun_button_submit" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -88,10 +77,8 @@
         android:id="@+id/enterRun_distance_val"
         android:hint="XX.XX"
         android:gravity="center_horizontal"
-        android:layout_above="@+id/enterRun_duration_val"
-        android:layout_marginBottom="33dp"
-        android:layout_alignLeft="@+id/enterRun_date_val"
-        android:layout_alignRight="@+id/enterRun_date_val" />
+        android:layout_alignBottom="@+id/enterRun_distance"
+        android:layout_alignLeft="@+id/enterRun_date_val" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -113,6 +100,17 @@
         android:textColor="#4e4e4e"
         android:layout_below="@+id/enterRun_title"
         android:layout_alignParentLeft="true" />
+<!--
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Equipment Used"
+        android:id="@+id/enterRun_equipUsed"
+        android:textSize="20dp"
+        android:layout_marginLeft="29dp"
+        android:layout_above="@+id/enterRun_button_submit"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="52dp" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -120,5 +118,5 @@
         android:id="@+id/enterRun_equipUsed_spinner"
         android:layout_below="@+id/enterRun_duration"
         android:layout_toRightOf="@+id/enterRun_button_submit" />
-
+-->>
 </RelativeLayout>
