@@ -130,17 +130,6 @@
         android:layout_alignParentRight="true"
         android:textColor="#4e4e4e" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset All Records"
-        android:id="@+id/records_button_reset"
-        android:layout_marginBottom="23dp"
-        android:clickable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

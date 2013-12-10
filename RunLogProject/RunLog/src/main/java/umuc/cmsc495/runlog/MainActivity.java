@@ -80,11 +80,14 @@ public class MainActivity extends ActionBarActivity
                         .replace(R.id.container, new FragmentHistory())
                         .commit();
                 break;
+            // Equipment Feature not yet implemented
+            /*
             case 4:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, new FragmentEquipment())
                         .commit();
                 break;
+            */
         }
     }
 
